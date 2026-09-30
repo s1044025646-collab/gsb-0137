@@ -1,0 +1,29 @@
+{
+  "name": "grid-hydro-backend",
+  "version": "1.0.0",
+  "description": "Local raster terrain flow accumulation and watershed delineation backend (D8, sink filling, pour-point divides). API + CLI + synthetic DEM generator + tests. No UI, no map rendering, no external hydrology platforms.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "bin": {
+    "hydro": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "tsx src/api/server.ts",
+    "dev": "tsx watch src/api/server.ts",
+    "cli": "tsx src/cli/index.ts",
+    "demo": "tsx scripts/demo.ts",
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "clean": "powershell -ExecutionPolicy Bypass -File scripts/clean.ps1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "@types/node": "^22.10.2"
+  }
+}
