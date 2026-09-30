@@ -1,0 +1,26 @@
+{
+  "name": "terrain-watershed",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local raster terrain flow accumulation and watershed delineation backend (D8)",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "bin": {
+    "twsh": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "echo \"no build step required; Node runs TypeScript directly via type stripping\"",
+    "start": "node --experimental-sqlite src/api/server.ts",
+    "serve": "node --experimental-sqlite dist/api/server.js",
+    "cli": "node --experimental-sqlite src/cli/index.ts",
+    "test": "node --experimental-sqlite --test --test-reporter=spec test/*.test.ts",
+    "demo": "node --experimental-sqlite test/demo.e2e.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "typescript": "^7.0.2"
+  }
+}
